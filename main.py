@@ -77,7 +77,7 @@ nodes_num = [150, 200, 300, 400]
 fam_num_percent = [0.1, 0.3, 0.5]
 visit_pattern = [1, 2, 3, 4]
 symmetric = [0, 1]
-capacity = [180, 200, 220, 240]
+capacity = [220, 250, 270, 300]
 
 # permutations = list(itertools.product(nodes_num, fam_num_percent, visit_pattern, symmetric))
 # print(f"Number of permutations: {len(permutations)}")
@@ -129,7 +129,7 @@ for n in nodes_num:
                         if i == j:
                             nodes[i].costs.append(1000000)
                         else:
-                            nodes[i].costs.append(random.randint(2, 80))
+                            nodes[i].costs.append(random.randint(5, 85))
 
             costs = [node.costs for node in nodes]
 
