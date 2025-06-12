@@ -58,13 +58,13 @@ def plot_line_g():
     import numpy as np
     g_folder = 'g'
     files = os.listdir(g_folder)
-    colors = ['#ff6961', '#ff9999', '#ffcc99', '#ffe066']
+    colors = ['#77dd77', '#84b6f4', '#cbaacb', '#f49ac2']
     plt.figure(figsize=(10, 6))
     for i, file in enumerate(files):
         if file.endswith('.txt'):
-            data = np.loadtxt(os.path.join(g_folder, file))
-            x = data[:, 1]  # second column
-            y = data[:, 0]  # first column
+            data = np.loadtxt(os.path.join(g_folder, file), delimiter=',')
+            x = data[:, 1].astype(int)  # second column as int
+            y = data[:, 0].astype(int)  # first column as int  # first column
             plt.plot(x, y, label=file[:-4], color=colors[i % len(colors)])  # remove .txt from label
     plt.xlabel('Time (s)')
     plt.ylabel('Solution Cost')
