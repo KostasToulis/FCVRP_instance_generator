@@ -51,9 +51,32 @@ def plot_g_probability():
     plt.tight_layout()
     plt.show()
 
+def plot_line_g():
+    # In the g folder I have 4 txt files. Each line has two elements: the first is the solution cost (y-axis) and the second is the second (x-axis).
+    # Create a line plot for each file. The lines should be in different colors on the same chart. Additionally, label each line with the file name.
+    import os
+    import numpy as np
+    g_folder = 'g'
+    files = os.listdir(g_folder)
+    colors = ['#ff6961', '#ff9999', '#ffcc99', '#ffe066']
+    plt.figure(figsize=(10, 6))
+    for i, file in enumerate(files):
+        if file.endswith('.txt'):
+            data = np.loadtxt(os.path.join(g_folder, file))
+            x = data[:, 1]  # second column
+            y = data[:, 0]  # first column
+            plt.plot(x, y, label=file[:-4], color=colors[i % len(colors)])  # remove .txt from label
+    plt.xlabel('Time (s)')
+    plt.ylabel('Solution Cost')
+    plt.title('Solution Cost Over Time')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
 
 
 # plot_solution_construction_method()
 # plot_solution_population()
 # plot_chain_length()
-plot_g_probability()
+# plot_g_probability()
+plot_line_g()
