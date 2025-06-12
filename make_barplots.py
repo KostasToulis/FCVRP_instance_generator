@@ -5,7 +5,8 @@ def plot_solution_construction_method():
     y = [92.37, 90.26, 92.89, 93.42, 93.95, 93.42]
     x = ['Memory-based', 'Substitution-based', 'Equal probability', '75% Memory-based', '80% Memory-based', '90% Memory-based']
 
-    plt.bar(x, y, color='lightgray', edgecolor='black', width=0.7)
+    # plt.bar(x, y, color='lightgray', edgecolor='black', width=0.7)
+    plt.bar(x, y, color=['#ff6961', '#ffe066', '#ff9999', '#ffcc99', '#ffb347', '#ffae42'], edgecolor='black', width=0.7)
     plt.xlabel('Solution Construction Balance')
     plt.ylabel('Solved (%)')
     plt.ylim(89, 95)
@@ -39,6 +40,20 @@ def plot_chain_length():
     plt.tight_layout()
     plt.show()
 
-plot_solution_construction_method()
+def plot_g_probability():
+    y = [86.2, 92.7, 96.6, 96.1]
+    x = ['0', '0.2', '0.33', '0.5']
+    plt.bar(x, y, color=['#ff6961', '#ff9999', '#ffcc99' , '#ffe066'], edgecolor='black', width=0.7)
+    plt.xlabel('g probability')
+    plt.ylabel('Solved (%)')
+    plt.ylim(85, 98)
+    plt.xticks(x)
+    plt.tight_layout()
+    plt.show()
+
+
+
+# plot_solution_construction_method()
 # plot_solution_population()
 # plot_chain_length()
+plot_g_probability()
