@@ -4,11 +4,15 @@ import pandas as pd
 def match_outputs(new_instance_file, output_file, output_column_name='Score'):
     # Load the dataframes
     new_instance_df = pd.read_csv(new_instance_file, header=None, names=['Instance', 'Score'])
+    new_instance_df.reset_index(drop=True, inplace=True)
     output_df = pd.read_csv(output_file, header=None, names=['Instance', 'Score'])
 
     # Ensure both dataframes have the correct columns
     if 'Instance' not in new_instance_df.columns or 'Score' not in output_df.columns:
         raise ValueError("DataFrames must contain 'Instance' and 'Score' columns.")
+
+    print(new_instance_df.head())
+    print(output_df.head())
 
     # Merge the dataframes on the 'Instance' column
     merged_df = pd.merge(new_instance_df, output_df, on='Instance', how='left')
