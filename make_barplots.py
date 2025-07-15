@@ -3,20 +3,22 @@ import matplotlib.pyplot as plt
 
 def plot_solution_construction_method():
     # y = [92.37, 93.42, 93.95, 93.42, 92.89, 90.26]
-    y = [90.26, 92.89, 93.42, 93.95, 93.42, 92.37]
+    # y = [90.26, 92.89, 93.42, 93.95, 93.42, 92.37]
 
-    x = ['0', '0.5', '0.7', '0.8',  '0.9', '1']
+    y = [94.27, 94.55, 94.01, 94.79, 95.05, 94.79, 94.27]
+
+    x = ['0', '0.5', '0.6', '0.7', '0.8',  '0.9', '1']
 
     plt.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)
     # plt.bar(x, y, color='lightgray', edgecolor='black', width=0.7)
     # plt.bar(x, y, color=['#ff6961', '#ffe066', '#ff9999', '#ffcc99', '#ffb347', '#ff5733'], edgecolor='black', width=0.7)
-    plt.bar(x, y, color=['lightgray', 'lightgray', 'lightgray', 'skyblue', 'lightgray', 'lightgray'], edgecolor='black',
+    plt.bar(x, y, color=['lightgray', 'lightgray', 'lightgray', 'lightgray', 'skyblue', 'lightgray', 'lightgray'], edgecolor='black',
             width=0.7, zorder=3)
     for i, v in enumerate(y):
         plt.text(i, v + 0.2, f"{v:.2f}", ha='center', fontsize=22, fontfamily='serif')
     plt.xlabel('Probability of using the PSC strategy', fontsize=22, labelpad=15, fontfamily='serif')
-    plt.ylabel('Percentage of Solutions Matched (%)', fontsize=22, labelpad=10, fontfamily='serif')
-    plt.ylim(89, 95)
+    plt.ylabel('Percentage of Solutions Matched or Improved (%)', fontsize=20, labelpad=10, fontfamily='serif')
+    plt.ylim(93, 96)
     # plt.title('Comparison of Methods')
     plt.xticks(fontsize=20, fontfamily='serif')
     plt.yticks(fontsize=20, fontfamily='serif')
@@ -148,10 +150,10 @@ def plot_g_topArcs_heatmap():
     plt.tight_layout()
     plt.show()
 
-# plot_solution_construction_method()
+plot_solution_construction_method()
 # plot_solution_population()
 # plot_chain_length()
 # plot_g_probability()
 # plot_top_arcs()
 # plot_line_g()
-plot_g_topArcs_heatmap()
+# plot_g_topArcs_heatmap()

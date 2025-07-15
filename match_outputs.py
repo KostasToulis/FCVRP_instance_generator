@@ -3,9 +3,9 @@ import pandas as pd
 
 def match_outputs(new_instance_file, output_file, output_column_name='Score'):
     # Load the dataframes
-    new_instance_df = pd.read_csv(new_instance_file, header=None, names=['Instance', 'Score'])
+    new_instance_df = pd.read_csv(new_instance_file, header=None, names=['Instance', 'Score', 'Time'])
     new_instance_df.reset_index(drop=True, inplace=True)
-    output_df = pd.read_csv(output_file, header=None, names=['Instance', 'Score'])
+    output_df = pd.read_csv(output_file, header=None, names=['Instance', 'Score', 'Time'])
 
     # Ensure both dataframes have the correct columns
     if 'Instance' not in new_instance_df.columns or 'Score' not in output_df.columns:

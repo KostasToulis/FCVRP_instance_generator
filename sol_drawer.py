@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 #     plt.show()
 
 def plot_solution(solution, model):
-    plt.figure(figsize=(10, 10), dpi=400)
+    plt.figure(figsize=(10, 10), dpi=200)
 
     # Create a color map for families
     family_colors = {fam.id: plt.cm.tab20(i % 20) for i, fam in enumerate(model.families)}
@@ -43,8 +43,8 @@ def plot_solution(solution, model):
     # Draw each node as a circle, colored by family
     for node in model.nodes:
         color = family_colors.get(node.family, 'black')  # Default to black if no family
-        plt.scatter(node.x, node.y, s=400, color=color, edgecolors='black', zorder=3)  # Increased size (s=200)
-        plt.text(node.x, node.y, str(node.ID), fontsize=12, ha='center', va='center', color='white', zorder=4)
+        plt.scatter(node.x, node.y, s=300, color=color, edgecolors='black', zorder=3)  # Increased size (s=200)
+        plt.text(node.x, node.y - 0.3, str(node.ID), fontsize=12, ha='center', va='center', color='white',zorder=4)
 
     # Create a custom legend for families
     legend_elements = [
