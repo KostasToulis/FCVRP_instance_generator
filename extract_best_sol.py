@@ -1,7 +1,8 @@
 import os
 import re
 
-directory = 'FCVRP-Best Solutions'
+# directory = 'FCVRP-Best Solutions'
+directory = 'newInstances-best'
 
 for filename in os.listdir(directory):
     if filename.endswith('.txt'):
